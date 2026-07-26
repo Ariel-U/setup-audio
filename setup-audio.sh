@@ -3,15 +3,6 @@
 AZUL='\033[0;34m'
 NC='\033[0m'
 
-FORCE=$([[ "$1" == "--force" ]] && echo true || echo false)
-
-if [ -f "$HOME/.config/pipewire/pipewire.conf" ]; then
-    if [[ "$FORCE" == "true" ]]; then
-        echo "Modo forzoso: sobrescribiendo configuración."
-    else
-        read -r respuesta < /dev/tty
-    fi
-fi
 # Crar el grupo 'audio' y agreagar usuario.
 echo -e "${AZUL}Agregando usuario al grupo audio${NC}"
 grupo="audio"
